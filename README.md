@@ -18,7 +18,7 @@ Invariant Violation: requireNativeComponent: "BlurView" was not found in the UIM
   - `npm i`
   - `cd ios`, `pod install` (linking doesn't work)
   - `react-native unlink @react-native-community/blur` (RN 60+ don't need to be linked)
-  - `react-native run-ios` (Didn't test on android)
+  - `react-native run-ios` (Gives an error saying blur is linked manually but it still ran fine. Didn't test on android)
   
 
  
