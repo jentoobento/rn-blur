@@ -1,27 +1,43 @@
-import React from 'react';
-import { View, Text, Image } from 'react-native';
+import React, { useState } from 'react';
+import { View, Text, Image, Dimensions, TouchableOpacity } from 'react-native';
 import { BlurView } from "@react-native-community/blur";
 import styles from './styles';
 
+const deviceHeight = Dimensions.get('screen').height;
+const deviceWidth = Dimensions.get('screen').width;
+
+
 const App = () => {
-  
+  const [blurType, changeBlurType] = useState('light');
+  const [blurAmt, increaseBlurAmt] = useState(1);
+
 
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: 'white'}}>
       <View style={{ height: 40, width: 100, backgroundColor: 'black'}}>
         <Text style={{ color: 'white'}}>Blurred Text</Text>
       </View>
-      <Image resizeMode="contain" source={require('./images/park.jpg')}/>
-      <BlurView blurAmount={3} style={{
-        position: "absolute",
-        top: 0,
-        left: 0,
-        bottom: 0,
-        right: 0
-      }}/>
-      <View style={{ height: 40, width: 100, backgroundColor: 'white'}}>
-        <Text>Unblurred Text</Text>
+      <Image resizeMode="contain" style={{ height: 300, width: 500 }} source={require('./images/park.jpg')}/>
+      <BlurView 
+        blurType={blurType}
+        blurAmount={blurAmt}
+        style={{
+          position: "absolute",
+          zIndex: 1,
+          top: deviceWidth / 2 + 200 / 2,
+          height: 200,
+          width: 200,
+          borderWidth: 1,
+          borderColor: 'black',
+        }}/>
+      <View style={{ height: 40, width: 100, backgroundColor: 'black'}}>
+        <Text style={{ color: 'white'}}>Unblurred Text</Text>
       </View>
+      <TouchableOpacity onPress={() => increaseBlurAmt(blurAmt + 1)} style={{ backgroundColor: 'tomato'}}>
+        <Text>Increase blur</Text>
+        <Text>Blur: {blurAmt}</Text>
+      </TouchableOpacity>
+      <Text>BlueView blurs everything above it</Text>
     </View>
   );
 };
