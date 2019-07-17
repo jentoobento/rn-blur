@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* blurExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* blurExampleTests.m */; };
 		0B2F9BDD9926D30798A624FA /* libPods-blurExampleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2081DD2765A03A7DEC52DBF8 /* libPods-blurExampleTests.a */; };
@@ -20,7 +19,6 @@
 		2E4022EA22DFA6C4002CFADC /* libPods-blurExample-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E4022E922DFA6C4002CFADC /* libPods-blurExample-tvOS.a */; };
 		2E4022EC22DFA6C4002CFADC /* libPods-blurExample-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E4022EB22DFA6C4002CFADC /* libPods-blurExample-tvOSTests.a */; };
 		2E4022EE22DFA6C4002CFADC /* libPods-blurExampleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E4022ED22DFA6C4002CFADC /* libPods-blurExampleTests.a */; };
-		2E4022F822DFA963002CFADC /* libRNBlur.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E4022F522DFA911002CFADC /* libRNBlur.a */; };
 		3210D1144A491186DED2EBA8 /* libPods-blurExample-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E4022EB22DFA6C4002CFADC /* libPods-blurExample-tvOSTests.a */; };
 		59E73B778703E563B2D81A15 /* libPods-blurExample-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA14EA881613B17D95E0417C /* libPods-blurExample-tvOSTests.a */; };
 		742825C8CDF8C88D5D9D0B0E /* libPods-blurExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3148DBE75449033600C08BD2 /* libPods-blurExample.a */; };
@@ -44,20 +42,6 @@
 			remoteGlobalIDString = 2D02E47A1E0B4A5D006451C7;
 			remoteInfo = "blurExample-tvOS";
 		};
-		2E4022F422DFA911002CFADC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2E4022EF22DFA911002CFADC /* RNBlur.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A68BD7BC1BC31318005F02DF;
-			remoteInfo = RNBlur;
-		};
-		2E4022F622DFA911002CFADC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2E4022EF22DFA911002CFADC /* RNBlur.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 64D1BD361EEFE88700F3F219;
-			remoteInfo = "RNBlur-tvOS";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -79,7 +63,6 @@
 		2E4022E922DFA6C4002CFADC /* libPods-blurExample-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-blurExample-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E4022EB22DFA6C4002CFADC /* libPods-blurExample-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-blurExample-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E4022ED22DFA6C4002CFADC /* libPods-blurExampleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-blurExampleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2E4022EF22DFA911002CFADC /* RNBlur.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNBlur.xcodeproj; path = "../node_modules/@react-native-community/blur/ios/RNBlur.xcodeproj"; sourceTree = "<group>"; };
 		311E62137C21CF830E667994 /* Pods-blurExample-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-blurExample-tvOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-blurExample-tvOS/Pods-blurExample-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		3148DBE75449033600C08BD2 /* libPods-blurExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-blurExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		618296CC80E8DED9887371E7 /* Pods-blurExample-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-blurExample-tvOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-blurExample-tvOS/Pods-blurExample-tvOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -108,7 +91,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E4022F822DFA963002CFADC /* libRNBlur.a in Frameworks */,
 				2E4022EA22DFA6C4002CFADC /* libPods-blurExample-tvOS.a in Frameworks */,
 				2E4022EC22DFA6C4002CFADC /* libPods-blurExample-tvOSTests.a in Frameworks */,
 				2E4022EE22DFA6C4002CFADC /* libPods-blurExampleTests.a in Frameworks */,
@@ -184,19 +166,9 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		2E4022F022DFA911002CFADC /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				2E4022F522DFA911002CFADC /* libRNBlur.a */,
-				2E4022F722DFA911002CFADC /* libRNBlur.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				2E4022EF22DFA911002CFADC /* RNBlur.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -363,10 +335,6 @@
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
 			projectDirPath = "";
 			projectReferences = (
-				{
-					ProductGroup = 2E4022F022DFA911002CFADC /* Products */;
-					ProjectRef = 2E4022EF22DFA911002CFADC /* RNBlur.xcodeproj */;
-				},
 			);
 			projectRoot = "";
 			targets = (
@@ -379,20 +347,6 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		2E4022F522DFA911002CFADC /* libRNBlur.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRNBlur.a;
-			remoteRef = 2E4022F422DFA911002CFADC /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		2E4022F722DFA911002CFADC /* libRNBlur.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRNBlur.a;
-			remoteRef = 2E4022F622DFA911002CFADC /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -658,7 +612,9 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				HEADER_SEARCH_PATHS = "$(inherited)";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = blurExampleTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -679,7 +635,9 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
-				HEADER_SEARCH_PATHS = "$(inherited)";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = blurExampleTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -702,7 +660,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = 9CLQ2853BN;
-				HEADER_SEARCH_PATHS = "$(inherited)";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = blurExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -723,7 +683,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9CLQ2853BN;
-				HEADER_SEARCH_PATHS = "$(inherited)";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = blurExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -750,7 +712,9 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				HEADER_SEARCH_PATHS = "$(inherited)";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = "blurExample-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -779,7 +743,9 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
-				HEADER_SEARCH_PATHS = "$(inherited)";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = "blurExample-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -807,7 +773,9 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				HEADER_SEARCH_PATHS = "$(inherited)";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = "blurExample-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -835,7 +803,9 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
-				HEADER_SEARCH_PATHS = "$(inherited)";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = "blurExample-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
