@@ -30,6 +30,10 @@ target 'blurExample' do
 
   pod 'react-native-blur', :path => '../node_modules/@react-native-community/blur'
 
+  pod 'react-native-slider', :path => '../node_modules/@react-native-community/slider'
+
+  pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
+
   target 'blurExampleTests' do
     inherit! :search_paths
     # Pods for testing
