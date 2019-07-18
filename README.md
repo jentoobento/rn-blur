@@ -28,5 +28,8 @@ Invariant Violation: requireNativeComponent: "BlurView" was not found in the UIM
 - `cd ios`, `pod install` (The name of module should be in green)
 - `react-native run-ios` (Gives the same error about linking manually but the app will still open)
 
- 
+### Interesting Notes
+
+- The maximium blur amount for the module is 100 on iOS, for Android it is 32 (About 20 is sufficiently blurry for me personally)
+- 
   
