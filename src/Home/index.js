@@ -5,28 +5,7 @@ import { BlurView } from "@react-native-community/blur";
 import Slider from '@react-native-community/slider';
 import styles from './styles';
 
-const deviceHeight = Dimensions.get('screen').height;
-const deviceWidth = Dimensions.get('screen').width;
-
-// const HomeStack = createStackNavigator({
-//   Home: HomeScreen,
-// });
-
 const Home = () => {
-  // const navigationOptions = {
-  //   headerTitle: "Home",
-  //   headerRight: (
-  //     <Button
-  //       onPress={() => alert('This is a button!')}
-  //       title="Info"
-  //       color="#fff"
-  //     />
-  //   ),
-  // };
-  const navigationOptions = {
-    title: 'Home',
-  };
-
     const [blurType, setBlurType] = useState('light');
     const [blurAmt, setBlurAmt] = useState(1);
   
@@ -36,56 +15,33 @@ const Home = () => {
     }
   
     return (
-      <View style={{ flex: 1, marginTop: 10 }}>
-        <View style={{ flex: 1, alignItems: 'center', backgroundColor: 'white'}}>
+      <View style={styles.container}>
+        <View style={styles.backgroundContainer}>
         
-          <View style={{ height: 40, width: '100%', backgroundColor: 'black', justifyContent: 'space-between', alignItems: 'center', flexDirection: 'row', paddingHorizontal: 10}}>
-            <Text style={{ color: 'white', fontSize: 24 }}>Blur Text</Text>
-            <Text style={{ color: 'white', fontSize: 24 }}>Blur Text</Text>
+          <View style={[styles.blurryTextContainer, { backgroundColor: 'black' }]}>
+            <Text style={[styles.blurryText, { color: 'white' }]}>Blur Text</Text>
+            <Text style={[styles.blurryText, { color: 'white' }]}>Blur Text</Text>
             <BlurView 
               blurType={blurType}
               blurAmount={blurAmt}
-              style={{
-                position: "absolute",
-                zIndex: 1,
-                top: 0,
-                height: 40,
-                width: 200,
-                borderWidth: 1,
-                borderColor: 'black',
-            }}/>
+              style={styles.blurForBlurryText}/>
           </View>
 
-          <View style={{ height: 40, width: '100%', backgroundColor: 'white', justifyContent: 'space-between', alignItems: 'center', flexDirection: 'row', paddingHorizontal: 10}}>
-            <Text style={{ fontSize: 24 }}>Blur Text</Text>
-            <Text style={{ fontSize: 24 }}>Blur Text</Text>
+          <View style={[styles.blurryTextContainer, { backgroundColor: 'white' }]}>
+            <Text style={styles.blurryText}>Blur Text</Text>
+            <Text style={styles.blurryText}>Blur Text</Text>
             <BlurView 
               blurType={blurType}
               blurAmount={blurAmt}
-              style={{
-                position: "absolute",
-                top: 0,
-                height: 40,
-                width: 200,
-                borderWidth: 1,
-                borderColor: 'black',
-            }}/>
+              style={styles.blurForBlurryText}/>
           </View>
 
           <View>
-            <Image resizeMode="contain" style={{ height: 300, width: 500 }} source={require('../../images/park.jpg')}/>
+            <Image resizeMode="contain" style={styles.image} source={require('../../images/park.jpg')}/>
             <BlurView 
               blurType={blurType}
               blurAmount={blurAmt}
-              style={{
-                position: "absolute",
-                top: 50,
-                left: 150,
-                height: 200,
-                width: 200,
-                borderWidth: 1,
-                borderColor: 'black',
-              }}/>
+              style={styles.blurForImage}/>
             </View>
 
           <View style={styles.rowCenter}>
@@ -124,7 +80,7 @@ const Home = () => {
                 <View style={{ marginTop: 10 }}>
                   <Text>Blur Amount: {blurAmt}</Text>
                   <Slider
-                    style={{ width: deviceWidth - 40, height: 40 }}
+                    style={styles.slider}
                     minimumValue={1}
                     maximumValue={20}
                     minimumTrackTintColor="#28bcec"
@@ -136,6 +92,15 @@ const Home = () => {
                 </View>
               )
             }
+
+        <View style={styles.codeTextContainer}>
+          <Text>
+            &lt;BlurView&gt;{'\n'}
+            {'  '}blurType="{blurType}"{'\n'}
+            {blurType !== 'regular' && blurType !== 'prominent' && `  blurAmount={${blurAmt}}\n`}
+            &lt;/BlurView&gt;
+          </Text>
+        </View>
         </View>
       </View>
     );
