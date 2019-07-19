@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 import { View, Text, Image, Dimensions, TouchableOpacity, Button } from 'react-native';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 import { BlurView } from "@react-native-community/blur";
+import BLURTYPES from '../../utils/enums';
 import Slider from '@react-native-community/slider';
 import styles from './styles';
 
 const Home = () => {
-    const [blurType, setBlurType] = useState('light');
+    const [blurType, setBlurType] = useState(BLURTYPES.LIGHT);
     const [blurAmt, setBlurAmt] = useState(1);
   
     const changeBlurType = type => {
@@ -46,36 +47,41 @@ const Home = () => {
 
           <View style={styles.rowCenter}>
             <View style={styles.buttonContainer}>
-              <TouchableOpacity onPress={() => changeBlurType('light')} style={[styles.button, { backgroundColor: '#f4f4f4' }]}>
-                <Text style={{ color: '#000' }}>Light</Text>
+              <TouchableOpacity onPress={() => changeBlurType(BLURTYPES.REGULAR)} 
+                style={[styles.button, { backgroundColor: '#e6e6e6', width: 60, borderColor: blurType === 'regular' ? 'red' : 'black' }]}>
+                <Text style={{ color: blurType === BLURTYPES.REGULAR ? 'red' : '#000'}}>Regular</Text>
               </TouchableOpacity>
             </View>
             <View style={styles.buttonContainer}>
-              <TouchableOpacity onPress={() => changeBlurType('xlight')} style={[styles.button, { backgroundColor: '#fff' }]}>
-                <Text style={{ color: '#000'}}>Extra Light</Text>
-              </TouchableOpacity>
-            </View>
-            <View style={styles.buttonContainer}>
-              <TouchableOpacity onPress={() => changeBlurType('dark')} style={[styles.button, { backgroundColor: '#000' }]}>
-                <Text style={{ color: '#fff'}}>Dark</Text>
+              <TouchableOpacity onPress={() => changeBlurType(BLURTYPES.PROMINENT)} 
+              style={[styles.button, { backgroundColor: '#f8ff9d', width: 70, borderColor: blurType === 'prominent' ? 'red' : 'black' }]}>
+                <Text style={{ color: blurType === BLURTYPES.PROMINENT ? 'red' : '#000'}}>Prominent</Text>
               </TouchableOpacity>
             </View>
           </View>
 
           <View style={styles.rowCenter}>
             <View style={styles.buttonContainer}>
-              <TouchableOpacity onPress={() => changeBlurType('regular')} style={[styles.button, { backgroundColor: '#e6e6e6', width: 60,  }]}>
-                <Text style={{ color: '#000'}}>Regular</Text>
+              <TouchableOpacity onPress={() => changeBlurType(BLURTYPES.LIGHT)} 
+              style={[styles.button, { backgroundColor: '#f4f4f4', borderColor: blurType === 'light' ? 'red' : 'black' }]}>
+                <Text style={{ color: blurType === BLURTYPES.LIGHT ? 'red' : '#000' }}>Light</Text>
               </TouchableOpacity>
             </View>
             <View style={styles.buttonContainer}>
-              <TouchableOpacity onPress={() => changeBlurType('prominent')} style={[styles.button, { backgroundColor: '#f8ff9d', width: 70,  }]}>
-                <Text style={{ color: '#000'}}>Prominent</Text>
+              <TouchableOpacity onPress={() => changeBlurType(BLURTYPES.XLIGHT)} 
+              style={[styles.button, { backgroundColor: '#fff', borderColor: blurType === 'xlight' ? 'red' : 'black' }]}>
+                <Text style={{ color: blurType === BLURTYPES.XLIGHT ? 'red' : '#000'}}>Extra Light</Text>
+              </TouchableOpacity>
+            </View>
+            <View style={styles.buttonContainer}>
+              <TouchableOpacity onPress={() => changeBlurType(BLURTYPES.DARK)} 
+              style={[styles.button, { backgroundColor: '#000', borderColor: blurType === 'dark' ? 'red' : 'black' }]}>
+                <Text style={{ color: blurType === BLURTYPES.DARK ? 'red' : '#fff'}}>Dark</Text>
               </TouchableOpacity>
             </View>
           </View>
     
-            {blurType !== 'regular' && blurType !== 'prominent' && 
+            {blurType !== BLURTYPES.REGULAR && blurType !== BLURTYPES.PROMINENT && 
               (
                 <View style={{ marginTop: 10 }}>
                   <Text>Blur Amount: {blurAmt}</Text>
@@ -97,7 +103,7 @@ const Home = () => {
           <Text>
             &lt;BlurView&gt;{'\n'}
             {'  '}blurType="{blurType}"{'\n'}
-            {blurType !== 'regular' && blurType !== 'prominent' && `  blurAmount={${blurAmt}}\n`}
+            {blurType !== BLURTYPES.REGULAR && blurType !== BLURTYPES.PROMINENT && `  blurAmount={${blurAmt}}\n`}
             &lt;/BlurView&gt;
           </Text>
         </View>
